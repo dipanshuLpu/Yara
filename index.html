@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Confetti Falling</title>
+    
+</head>
+<body>
+    
+    <div class="container">
+        <h2 class="text">YARA WORKSHOP</h2>
+        <p class="text">
+            Responsibly feed the world and protect the planet 🌳 🌈
+            <br>
+            <br>
+            We appreciate your involvement and thank you for sparing the valuable time for the session. We are sure that by participating in the session you have gain useful knowledge and also new innovative ideas. We would also like to share your valuable feedback for future planning of such seminars.            
+            <br>
+            <br>
+            Together we'll grow a nature-positive food future.
+        </p>
+
+       <a href="#" class="btn">Click Here</a>
+       <img  src="./hill.png" class="fish"/>
+       
+
+       <div class="popup">
+
+           <h1 class="text2">Thank you so much for attending workshop! Yara Team    <br>   <br>  <img class = "imgg" src="https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/a522a079-45c7-4690-897c-93c735a29c17.png" class="fish"/>
+           </h1>
+
+           <b class="close">X</b>
+       </div>
+
+
+
+
+    </div>
+    
+    <canvas id="my-canvas"></canvas>
+    <script src="./assets/js/index.min.js"></script>
+    <script>
+        let btn =document.querySelector('.btn');
+        let popup =document.querySelector('.popup')
+        let close =document.querySelector('.close');
+        let canvas =document.querySelector('#my-canvas');
+        btn.addEventListener('click',function(){
+            popup.classList.add('active')
+            canvas.classList.add('active')
+            setTimeout(()=>{
+                canvas.classList.remove('active')
+            },3000
+            )
+        })
+        close.addEventListener('click',function(){
+            popup.classList.remove('active')
+            canvas.classList.remove('active')
+        })
+        var confettiSettings = { target: 'my-canvas' };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render()
+    </script>
+   
+</body>
+</html>
